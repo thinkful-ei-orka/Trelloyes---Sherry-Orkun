@@ -2,7 +2,6 @@ import React from 'react';
 
 
 function Card(props) {
-    // const cards = 
     return (
         <div className="Card">
             <button type="button">delete</button>
