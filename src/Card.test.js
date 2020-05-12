@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 
 import Card from './Card';
 
@@ -17,4 +18,13 @@ import Card from './Card';
 
       ReactDOM.unmountComponentAtNode(div);
    })
+
+   it('renders this UI as expcected', () => {
+     const tree = renderer.create(<Card
+      title="To-Do"
+      content="sleep"
+      />).toJSON();
+      
+      expect(tree).toMatchSnapshot();
+   });
  });
