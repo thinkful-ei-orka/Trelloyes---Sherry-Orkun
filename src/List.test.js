@@ -10,15 +10,23 @@ import List from './List';
 
      ReactDOM.render(
        <List 
-        header="Header"
-        cards={[
-          {id: 'a', title: 'title', content: 'content'},
-          {id: 'b', title: 'title b', content: 'content b'}
-        ]}
+       header="Header"
+       cards={[
+       ]}
        />,
        section
      );
      
      ReactDOM.unmountComponentAtNode(section);
    });
+
+   it('renders this UI as expected', () => {
+    const tree = renderer.create(<List 
+      header="Header"
+      cards={[
+      ]}
+      />).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
  })
