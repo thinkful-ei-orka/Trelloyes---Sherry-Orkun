@@ -6,7 +6,13 @@ function List(props) {
       <section className="List">
           <header className="List-header">
             <h2>{props.header}</h2>
-            {props.cards.map(card => <Card title={card.title} content={card.content} key={card.id}/>)}
+            <button onClick={() => props.create(props.id)}>Create a Card</button>
+            {props.cards.map(card => <Card 
+              delete={props.delete}
+              title={card.title} 
+              content={card.content} 
+              key={card.id}
+              id={card.id}/>)}
           </header>  
       </section>
     )
